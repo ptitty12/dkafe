@@ -6,15 +6,15 @@
 #                                          by Jon Wilson (10yard)
 #
 # Front End Features
-FREE_PLAY = 0
-UNLOCK_MODE = 1
+FREE_PLAY = 1
+UNLOCK_MODE = 0
 BASIC_MODE = 0
 
 # Front End Settings
 FULLSCREEN = 1
 ROTATION = 0
 CONFIRM_EXIT = 1
-SHOW_SPLASHSCREEN = 1
+SHOW_SPLASHSCREEN = 0
 SHOW_GAMETEXT = 1
 ENABLE_MENU = 1
 ENABLE_SHUTDOWN = 0
@@ -25,16 +25,17 @@ START_STAGE = 0
 HIGH_SCORE_SAVE = 1
 ENABLE_PLAYLIST = 1
 PLAYLIST_VOLUME = 5
-ENABLE_ADDONS = 1
+ENABLE_ADDONS = 0
 
 # Emulator Settings
 ROM_DIR = <ROOT>/roms
 ALLOW_ROM_OVERWRITE = 0
 
 # Emulator Settings for Windows
-OPTIONS = -rompath "<ROM_DIR>" -view "Screen 0 Pixel Aspect (7:8)" -nofilter -video opengl -fontpath <ROOT>/fonts -uifont spleen-5x8.bdf
+#-fontpath <ROOT>/fonts -uifont spleen-5x8.bdf this fontpath is dead-skip_gameinfo -joystick -joystickprovider sdl 
+OPTIONS = -rompath "<ROM_DIR>" -view "Screen 0 Pixel Aspect (7:8)" -nofilter -video opengl 
 EMU_1 = <ROOT>/dkwolf/dkwolf <OPTIONS>
-EMU_2 = <ROOT>/dkwolf/dkwolf <OPTIONS> -nvram_directory NUL -record <RECORD_ID> 
+EMU_2 = <ROOT>/dkwolf/dkwolf <OPTIONS> -plugin "C:\Users\Patrick Taylor\Downloads\dkafe_win64_binary_v0.76\dkwolf\plugins\retirement\init.lua"
 EMU_3 = <ROOT>/dkwolf/dkwolf_addon <OPTIONS> -rompath "<ROM_DIR>/other"
 EMU_4 = <ROOT>/dkwolf/dkwolf_addon <OPTIONS> -rompath "<ROM_DIR>/other" -nvram_directory NUL -record <RECORD_ID> 
 

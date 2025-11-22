@@ -226,8 +226,10 @@ for _rom in glob(os.path.join(ROM_DIR, "other", "*.zip")):
 OPTIONAL_NAMES = "dkong", "dkongjr", "dkong3"
 
 # Plugins add functionality to certain roms
+# PT made edits here for retired kong to work
 PLUGINS = (
     ("dkonglava", "dklavapanic"),
+   ("dkongretirement", "retirement"),
     ("dkonglava1", "dklavapanic"),
     ("dkonglava1", "dkstart5:1"),
     ("dkonglava2", "dklavapanic"),

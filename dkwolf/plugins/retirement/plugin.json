@@ -1,0 +1,10 @@
+{
+"plugin": {
+"name": "retirement",
+"description": "Retired Kong",
+"version": "0.21",
+"author": "Patrick Taylor",
+"type": "plugin",
+"start": "false"
+}
+}
