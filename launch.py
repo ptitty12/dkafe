@@ -309,7 +309,7 @@ def check_for_input(force_exit=False, continue_only=False):
                 open_settings_menu()
             if event.key == CONTROL_P2 and ENABLE_MENU and not continue_only:
                 build_menus()
-                open_menu(_g.menu, remember_selection=True)
+                open_menu_from_input(_g.menu, remember_selection=True)
             if event.key == CONTROL_COIN and not continue_only:
                 if _g.ready:
                     # globals()["SHOW_GAMETEXT"] = 1 if SHOW_GAMETEXT == 0 else 0
@@ -354,7 +354,7 @@ def check_for_input(force_exit=False, continue_only=False):
                     exit_program(confirm=CONFIRM_EXIT and not force_exit)
                 if button == BUTTON_P2 and ENABLE_MENU:
                     build_menus()
-                    open_menu(_g.menu, remember_selection=True)
+                    open_menu_from_input(_g.menu, remember_selection=True)
                 if button == BUTTON_COIN:
                     if _g.ready:
                         globals()["SHOW_GAMETEXT"] = 1 if SHOW_GAMETEXT == 0 else 0
@@ -1060,6 +1060,18 @@ def update_menu_selection(title, index):
         if title in w._title:
             _g.setmenu._widgets[i]._index = index
             break
+
+
+def open_menu_from_input(menu, remember_selection=False):
+    pygame.event.clear([
+        pygame.KEYDOWN,
+        pygame.KEYUP,
+        pygame.JOYBUTTONDOWN,
+        pygame.JOYBUTTONUP,
+        pygame.JOYAXISMOTION,
+        pygame.JOYHATMOTION,
+    ])
+    open_menu(menu, remember_selection=remember_selection)
 
 
 def open_menu(menu, remember_selection=False):
